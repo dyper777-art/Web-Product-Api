@@ -1,1 +1,1 @@
-web: java -jar build/libs/coffee-shop-telegram-bot-0.0.1-SNAPSHOT.war
+web: java -jar build/libs/web-product-api-0.0.1-SNAPSHOT.war
