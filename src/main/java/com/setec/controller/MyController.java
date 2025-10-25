@@ -18,6 +18,9 @@ import com.setec.dao.PostProductDAO;
 import com.setec.entities.Product;
 import com.setec.repos.ProductRepo;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/product")
 public class MyController {
