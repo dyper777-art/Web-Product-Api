@@ -28,10 +28,12 @@ public class Product {
 	
 	@JsonIgnore
 	private String imageUrl;
-	
+
 	public String getFullImageUrl() {
-		return ServletUriComponentsBuilder.fromCurrentContextPath()
-				.build().toString()+imageUrl;
+	    return ServletUriComponentsBuilder.fromCurrentContextPath()
+	            .scheme("https")
+	            .build()
+	            .toUriString() + imageUrl;
 	}
 	
 	public double amount() { return price * qty;}
