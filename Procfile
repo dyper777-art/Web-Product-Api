@@ -1,1 +1,1 @@
-web: ls && java -jar build/libs/web-product-api-0.0.1-SNAPSHOT.war
+web: ls myApp/static && java -jar build/libs/web-product-api-0.0.1-SNAPSHOT.war
