@@ -8,6 +8,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,6 +37,26 @@ public class MyController {
 		}
 		
 		return ResponseEntity.status(404).body(Map.of("message", "product is empty."));
+	}
+	
+	@GetMapping("/name/{name}")
+	public Object getById(@PathVariable("name") String name) {
+		var products = productRepo.findByName(name);
+		if(products.size() > 0)
+			return products;
+		
+		return ResponseEntity.status(404).body(Map.of("message", "Product id="+name+" not found"));
+	}
+	
+	@DeleteMapping("{id}")
+	public Object deleteById(@PathVariable("id") Integer id) {
+		var product = productRepo.findById(id);
+		if(product.isPresent()) {
+			productRepo.delete(product.get());
+			return ResponseEntity.status(404).body(Map.of("message", "Product id="+id+" has been deleted"));
+		}
+		
+		return ResponseEntity.status(404).body(Map.of("message", "Product id="+id+" not found"));
 	}
 	
 	@GetMapping("{id}")
