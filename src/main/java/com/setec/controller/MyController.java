@@ -38,7 +38,7 @@ public class MyController {
 			return products;
 		}
 		
-		return ResponseEntity.status(404).body(Map.of("message", "product is empty."));
+		return ResponseEntity.status(204).body(Map.of("message", "product is empty."));
 	}
 	
 	@GetMapping("/name/{name}")
