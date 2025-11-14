@@ -57,7 +57,7 @@ public class MyController {
 			var pro = product.get();
 			new File("./myApp/"+pro.getImageUrl()).delete();
 			productRepo.delete(product.get());
-			return ResponseEntity.status(404).body(Map.of("message", "Product id="+id+" has been deleted"));
+			return ResponseEntity.status(202).body(Map.of("message", "Product id="+id+" has been deleted"));
 		}
 		
 		return ResponseEntity.status(404).body(Map.of("message", "Product id="+id+" not found"));
