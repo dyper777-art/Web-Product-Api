@@ -13,7 +13,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name = "tbl_product")
+@Entity(name = "tbl_product_Chan_srey_leak")
 @Getter
 @Setter
 @AllArgsConstructor
