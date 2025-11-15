@@ -47,7 +47,7 @@ public class MyController {
 		if(products.size() > 0)
 			return products;
 		
-		return ResponseEntity.status(404).body(Map.of("message", "Product id="+name+" not found"));
+		return ResponseEntity.status(404).body(Map.of("message", "Product name="+name+" not found"));
 	}
 	
 	@DeleteMapping("{id}")
